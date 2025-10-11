@@ -1,0 +1,18 @@
+typedef enum {				
+    GPIO_Speed_2MHz,
+    GPIO_Speed_10MHz, 
+    GPIO_Speed_50MHz
+} GPIO_Speed_Value;
+typedef struct {
+    GPIO_Speed_Value GPIO_Speed;
+} GPIO_parameters;
+void GPIO_StructureInit(GPIO_parameters* GPIO_Pointer)
+{
+    GPIO_Pointer->GPIO_Speed = GPIO_Speed_2MHz;
+}
+int main()
+{
+    GPIO_parameters GPIO_Pointer;
+    GPIO_StructureInit(&GPIO_Pointer);
+    return 0;
+}
