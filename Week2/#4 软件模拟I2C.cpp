@@ -32,7 +32,7 @@ void SendByte(uint8_t data)			//传输过程中，SCL置高时，SDA数据稳定
 		data <<= 1;
 	}
 }
-uint8_t ReceiveAck();				//
+uint8_t ReceiveAck();				//ack为应答信号，为0表示输入，为1表示输出
 {
 	uint8_t ack;
 	SDA_High();
@@ -48,7 +48,7 @@ uint8_t ReceiveAck();				//
 	SCL_Low();
 	return ack;
 }
-uint8_t SendData(uint8_t data)
+uint8_t SendData(uint8_t data)			//一整个流程
 {
 	uint8_t condition;
 	Start();
