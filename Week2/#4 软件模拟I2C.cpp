@@ -45,7 +45,7 @@ uint8_t ReceiveAck();				//ack为应答信号，为0表示输入，为1表示输
 	{
 		ack = 1;
 	}
-	SCL_Low();
+	SCL_Low();							//调低SCL表示应答周期完成
 	return ack;
 }
 uint8_t SendData(uint8_t data)			//一整个流程
